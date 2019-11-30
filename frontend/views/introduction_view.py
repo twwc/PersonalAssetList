@@ -20,8 +20,13 @@ class IntroductionView:
 
         intro_frame = Frame(root, bg=bg_color)
         intro_frame.grid(row=1, column=0, pady=5, padx=5)
-        intro_text = Text(intro_frame)
+        intro_text = Text(intro_frame, width=67, height=29, font='ELITE 11 bold')
         intro_text.grid(row=0, column=0, pady=5, padx=5)
+        with open('frontend/views/intro.txt', 'r') as introduction:
+            contents = introduction.readlines()
+            for lines in contents:
+                intro_text.insert(END, lines)
+            intro_text.configure(state='disabled')
 
         button_frame = Frame(root, bg=bg_color)
         button_frame.grid(row=2, column=0, pady=5, padx=5)
