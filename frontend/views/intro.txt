@@ -1,0 +1,28 @@
+
+    PAL: Personal Asset List v1.0
+
+                                                 -- Introduction --
+
+    PAL was developed to help you keep track of your personal assets.
+    Types of assets PAL was designed to help with:
+
+    - Financial; includes banking accounts (savings/checking) and
+      credit accounts.
+
+    - Technology; includes hardware, computers, servers, workstations,
+      routers, switches, ISPs, and IoT devices.
+
+    - Software Licenses; includes any licenses purchased for access and/or
+      activation of software products.
+
+    - Online Accounts; includes social media accounts, email accounts,
+      subscriptions, etc. (PAL does not store passwords to online accounts)
+
+    *PAL provides an option to create a secret key to keep your personal
+    assets safe. The key is never stored in plaintext but hashed
+    (one-way irreversible encryption) and stored in a database. The key
+    will be used to access PAL as well as adding, editing, or removing
+    any existing assets, ensuring the security of your assets.
+
+    If you have any questions, complaints, or wish to see more features
+    contact the author: twwc.tech@protonmail.ch
