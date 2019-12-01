@@ -2,6 +2,9 @@
 
 from tkinter import *
 from tkinter import messagebox
+from backend import key_check
+from backend import hasher
+from frontend.views.assets_view import AssetsView
 
 
 class AccessView:
@@ -21,5 +24,15 @@ class AccessView:
         button_frame.grid(row=1, column=0, pady=5, padx=5)
         access_button = Button(button_frame, text='ACCESS', font='ELITE 10 bold', width=10)
         access_button.grid(row=0, column=0, pady=5, padx=5)
+
+        def init_access():
+            hashed_key = hasher.hash_key(access_key_entry.get())
+            if key_check.verify_key(hashed_key) is True:
+                root.destroy()
+                AssetsView(title='Assets', bg_color=bg_color)
+            else:
+                messagebox.showerror('Access Error', 'Incorrect Key!')
+
+        access_button.configure(command=init_access)
 
         root.mainloop()
