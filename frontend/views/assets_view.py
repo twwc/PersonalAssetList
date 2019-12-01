@@ -2,6 +2,7 @@
 
 from tkinter import *
 from tkinter import messagebox
+from backend import key_check
 
 
 class AssetsView:
@@ -26,24 +27,32 @@ class AssetsView:
 
         def init_financial_assets():
             # Check for key
+            if key_check.check_key_exists() is True:
+                pass
             # if key exists display access key window
             # else just display financial window
             pass
 
         def init_technology_assets():
             # check for key
+            if key_check.check_key_exists() is True:
+                pass
             # if key exists display access key window
             # else display technology window
             pass
 
         def init_license_assets():
             # check for key
+            if key_check.check_key_exists() is True:
+                pass
             # if key exists display access key window
             # else display license window
             pass
 
         def init_online_account_assets():
             # check for key
+            if key_check.check_key_exists() is True:
+                pass
             # if key exists display access key window
             # else display online accounts window
             pass
