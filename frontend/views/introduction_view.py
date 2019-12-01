@@ -2,6 +2,10 @@
 
 from tkinter import *
 from tkinter import messagebox
+from backend.database import KeyStorage
+from frontend.views.key_creation_view import KeyCreationView
+
+key_db = KeyStorage(db_name='SecretKeyDB', table_name='key')
 
 
 class IntroductionView:
@@ -32,5 +36,21 @@ class IntroductionView:
         button_frame.grid(row=2, column=0, pady=5, padx=5)
         enter_button = Button(button_frame, text='ENTER', font='ELITE 10 bold', width=12)
         enter_button.grid(row=0, column=0, pady=5, padx=5)
+
+        def init_enter():
+            if not key_db.check_key_status():
+                status_warning = messagebox.askyesno('No Key Warning',
+                                                     'No key detected! Create one to keep your assets secure?')
+                if status_warning == TRUE:
+                    KeyCreationView(title='Create Access Key', bg_color=bg_color)
+                else:
+                    messagebox.showwarning('Asset Security', 'No access key means assets are not secure.')
+                    # Display assets window
+                    pass
+            else:
+                # Display window to verify key for application access
+                print("Is it not empty?")
+
+        enter_button.configure(command=init_enter)
 
         root.mainloop()
