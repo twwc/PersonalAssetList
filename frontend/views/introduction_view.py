@@ -4,6 +4,7 @@ from tkinter import *
 from tkinter import messagebox
 from backend.database import KeyStorage
 from frontend.views.key_creation_view import KeyCreationView
+from frontend.views.access_view import AccessView
 
 key_db = KeyStorage(db_name='SecretKeyDB', table_name='key')
 
@@ -48,8 +49,8 @@ class IntroductionView:
                     # Display assets window
                     pass
             else:
-                # Display window to verify key for application access
-                print("Is it not empty?")
+                root.destroy()
+                AccessView(title='Access Key', bg_color=bg_color)
 
         enter_button.configure(command=init_enter)
 
