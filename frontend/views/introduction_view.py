@@ -20,7 +20,7 @@ class IntroductionView:
         app_title_frame.grid(row=0, column=0, pady=5, padx=5)
         app_title_label = Label(app_title_frame, text='PAL', font='ELITE 20 bold', bg=bg_color)
         app_title_label.grid(row=0, column=0, padx=5)
-        extended_app_title_label = Label(app_title_frame, text='Personal Assest List', font='ELITE 10 bold',
+        extended_app_title_label = Label(app_title_frame, text='Personal Asset List', font='ELITE 12 bold',
                                          bg=bg_color)
         extended_app_title_label.grid(row=1, column=0, padx=5)
 
