@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 from tkinter import messagebox
+from tkinter import *
 from frontend.views import introduction_view
 
 
@@ -13,8 +14,13 @@ def check_key_field(secret_key):
         return True
 
 
-def status_check():
+def check_key_exists():
     if len(introduction_view.key_db.check_key_status()) >= 1:
         messagebox.showerror('Key Submission Error', 'A key already exists.')
     else:
+        return True
+
+
+def verify_key(secret_key):
+    if introduction_view.key_db.key_verification(secret_key):
         return True
