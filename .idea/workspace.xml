@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="411b674a-c689-4e12-b60a-8935376eaebd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/key_check.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/access_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/assets_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/key_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/key_check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/access_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/access_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/introduction_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/introduction_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/key_creation_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/key_creation_view.py" afterDir="false" />
     </list>
