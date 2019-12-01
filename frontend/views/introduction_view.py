@@ -47,6 +47,7 @@ class IntroductionView:
                     KeyCreationView(title='Create Access Key', bg_color=bg_color)
                 else:
                     messagebox.showwarning('Asset Security', 'No access key means assets are not secure.')
+                    root.destroy()
                     AssetsView(title='Assets', bg_color=bg_color)
             else:
                 root.destroy()
