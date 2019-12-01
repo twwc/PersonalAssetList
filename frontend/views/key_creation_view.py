@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 from tkinter import *
-from tkinter import messagebox
 from frontend.views import introduction_view
 from backend import hasher
 from backend import key_check
