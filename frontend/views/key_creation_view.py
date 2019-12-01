@@ -30,7 +30,7 @@ class KeyCreationView:
         def init_submit():
             if key_check.check_key_field(access_key_entry.get()) is True:
                 hashed_key = hasher.hash_key(access_key_entry.get())
-                if key_check.status_check() is True:
+                if key_check.check_key_exists() is True:
                     introduction_view.key_db.insert_key(hashed_key)
                     access_key_entry.delete(0, END)
                 else:
