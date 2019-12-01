@@ -16,7 +16,7 @@ class KeyStorage:
     def insert_key(self, key):
         connection = sqlite3.connect(self.db_name)
         curs = connection.cursor()
-        curs.execute('INSERT INTO {} VALUES ?'.format(self.table_name), (key,))
+        curs.execute('INSERT INTO {} VALUES (?)'.format(self.table_name), (key,))
         connection.commit()
         connection.close()
 
