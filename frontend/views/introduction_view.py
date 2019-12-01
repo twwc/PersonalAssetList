@@ -5,6 +5,7 @@ from tkinter import messagebox
 from backend.database import KeyStorage
 from frontend.views.key_creation_view import KeyCreationView
 from frontend.views.access_view import AccessView
+from frontend.views.assets_view import AssetsView
 
 key_db = KeyStorage(db_name='SecretKeyDB', table_name='key')
 
@@ -46,8 +47,7 @@ class IntroductionView:
                     KeyCreationView(title='Create Access Key', bg_color=bg_color)
                 else:
                     messagebox.showwarning('Asset Security', 'No access key means assets are not secure.')
-                    # Display assets window
-                    pass
+                    AssetsView(title='Assets', bg_color=bg_color)
             else:
                 root.destroy()
                 AccessView(title='Access Key', bg_color=bg_color)
