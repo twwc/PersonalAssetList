@@ -4,6 +4,7 @@ from tkinter import *
 from tkinter import messagebox
 from frontend.views import introduction_view
 from backend import hasher
+from backend import key_check
 
 
 class KeyCreationView:
@@ -27,20 +28,12 @@ class KeyCreationView:
         cancel_button.grid(row=0, column=1, pady=5, padx=5)
 
         def init_submit():
-            if access_key_entry.get() == '':
-                messagebox.showerror('Key Entry Error', 'Access Key entry must not be empty!')
-            elif len(access_key_entry.get()) < 8:
-                messagebox.showerror('Key Error', 'Key must be at least 8 characters in length')
-            else:
+            if key_check.check_key_field(access_key_entry.get()) is True:
                 hashed_key = hasher.hash_key(access_key_entry.get())
-                if introduction_view.key_db.key_verification(hashed_key):
-                    messagebox.showerror('Key Submission Error', 'Error')
-                    access_key_entry.delete(0, END)
-                elif len(introduction_view.key_db.check_key_status()) >= 1:
-                    messagebox.showerror('Key Submission Error', 'A key already exists.')
+                if key_check.status_check() is True:
+                    introduction_view.key_db.insert_key(hashed_key)
                     access_key_entry.delete(0, END)
                 else:
-                    introduction_view.key_db.insert_key(hashed_key)
                     access_key_entry.delete(0, END)
 
         def init_cancel():
