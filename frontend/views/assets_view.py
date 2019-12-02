@@ -3,6 +3,10 @@
 from tkinter import *
 from tkinter import messagebox
 from backend import key_check
+from frontend.views.financial_assets_view import FinancialAssetsView
+from frontend.views.license_assets_view import LicenseAssetsView
+from frontend.views.technology_assets_view import TechnologyAssetsView
+from frontend.views.online_accounts_assets_view import OnlineAccountsAssetsView
 
 
 class AssetsView:
@@ -22,39 +26,39 @@ class AssetsView:
         online_account_assets_button = Button(assets_buttons_frame, width=25, height=15, bg='yellow')
         online_account_assets_button.grid(row=0, column=3, pady=5, padx=5)
 
-        # Create backend for key status
-        # If key exists ask for key every time an asset button is pressed
-
         def init_financial_assets():
-            # Check for key
-            if key_check.check_key_exists() is True:
-                pass
-            # if key exists display access key window
-            # else just display financial window
-            pass
+            FinancialAssetsView(title='Financial Assets', bg_color=bg_color)
 
         def init_technology_assets():
-            # check for key
-            if key_check.check_key_exists() is True:
+            if key_check.check_key_exists() is False:
+                # display 'access view' window
+                # Find a way to have 'access view' take inputs and open correct view without creating different...
+                # ...access views for each asset list
                 pass
-            # if key exists display access key window
-            # else display technology window
-            pass
+            else:
+                TechnologyAssetsView(title='Technology Assets', bg_color=bg_color)
 
         def init_license_assets():
-            # check for key
             if key_check.check_key_exists() is True:
+                # display 'access view' window
+                # Find a way to have 'access view' take inputs and open correct view without creating different...
+                # ...access views for each asset list
                 pass
-            # if key exists display access key window
-            # else display license window
-            pass
+            else:
+                LicenseAssetsView(title='License Assets', bg_color=bg_color)
 
         def init_online_account_assets():
-            # check for key
             if key_check.check_key_exists() is True:
+                # display 'access view' window
+                # Find a way to have 'access view' take inputs and open correct view without creating different...
+                # ...access views for each asset list
                 pass
-            # if key exists display access key window
-            # else display online accounts window
-            pass
+            else:
+                OnlineAccountsAssetsView(title='Online Accounts Assets', bg_color=bg_color)
+
+        financial_assets_button.configure(command=init_financial_assets)
+        technology_assets_button.configure(command=init_technology_assets)
+        license_assets_button.configure(command=init_license_assets)
+        online_account_assets_button.configure(command=init_online_account_assets)
 
         root.mainloop()
