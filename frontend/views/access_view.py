@@ -65,4 +65,7 @@ class TechnologyAccessView:
         root.title(title)
         root.configure(bg=bg_color)
 
+        access_key_lblframe = LabelFrame(root, bg=bg_color, fg=fg_color, text='Technology Assets', font='ELITE bold')
+        access_key_lblframe.grid(row=0, column=0, pady=5, padx=5)
+
         root.mainloop()

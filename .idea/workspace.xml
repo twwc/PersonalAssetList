@@ -15,7 +15,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PATH_TO_GIT" value="C:\Program Files\Git\bin\git.exe" />
+    <option name="PATH_TO_GIT" value="/usr/bin/git" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -26,8 +26,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager" selected="Python.pal">
     <configuration name="database" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -134,6 +135,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1515" height="150" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1575341079462" />
+    <state x="184" y="44" key="SettingsEditor" timestamp="1575410185542">
+      <screen x="38" y="0" width="1242" height="800" />
+    </state>
+    <state x="184" y="44" key="SettingsEditor/38.0.1242.800@38.0.1242.800" timestamp="1575410185542" />
     <state x="465" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1575408195264">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
