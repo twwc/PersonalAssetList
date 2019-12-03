@@ -36,3 +36,24 @@ class AccessView:
         access_button.configure(command=init_access)
 
         root.mainloop()
+
+
+class FinancialAccessView:
+    def __init__(self, title, bg_color, fg_color):
+        root = Tk()
+        root.title(title)
+        root.configure(bg=bg_color)
+
+        access_key_lblframe = LabelFrame(root, bg=bg_color, text='Financial Assets', fg=fg_color)
+        access_key_lblframe.grid(row=0, column=0, pady=5, padx=5)
+        access_key_label = Label(access_key_lblframe, text='Access Key:', bg=bg_color, font='Elite 10 bold')
+        access_key_label.grid(row=0, column=0, pady=5, padx=5)
+        access_key_entry = Entry(access_key_lblframe, show='*', font='bold')
+        access_key_entry.grid(row=0, column=1, pady=5, padx=5)
+
+        button_frame = Frame(root, bg=bg_color)
+        button_frame.grid(row=0, column=0, pady=5, padx=5)
+        submit_button = Button(button_frame, text='SUBMIT', relief='raised', font='ELITE 10 bold')
+        submit_button.grid(row=0, column=0, pady=5, padx=5)
+
+        root.mainloop()
