@@ -57,3 +57,12 @@ class FinancialAccessView:
         submit_button.grid(row=0, column=0, pady=5, padx=5)
 
         root.mainloop()
+
+
+class TechnologyAccessView:
+    def __init__(self, title, bg_color, fg_color):
+        root = Tk()
+        root.title(title)
+        root.configure(bg=bg_color)
+
+        root.mainloop()
