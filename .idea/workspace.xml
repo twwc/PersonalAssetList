@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="411b674a-c689-4e12-b60a-8935376eaebd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/views/access_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/access_view.py" afterDir="false" />
-    </list>
+    <list default="true" id="411b674a-c689-4e12-b60a-8935376eaebd" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
