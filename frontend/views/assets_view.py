@@ -7,6 +7,7 @@ from frontend.views.financial_assets_view import FinancialAssetsView
 from frontend.views.license_assets_view import LicenseAssetsView
 from frontend.views.technology_assets_view import TechnologyAssetsView
 from frontend.views.online_accounts_assets_view import OnlineAccountsAssetsView
+from frontend.views import access_view
 
 
 class AssetsView:
@@ -27,13 +28,14 @@ class AssetsView:
         online_account_assets_button.grid(row=0, column=3, pady=5, padx=5)
 
         def init_financial_assets():
-            FinancialAssetsView(title='Financial Assets', bg_color=bg_color)
+            if key_check.check_key_exists() is True:
+                access_view.FinancialAccessView(title='Financial Access', bg_color=bg_color, fg_color='yellow')
+            else:
+                FinancialAssetsView(title='Financial Assets', bg_color=bg_color)
 
         def init_technology_assets():
             if key_check.check_key_exists() is False:
                 # display 'access view' window
-                # Find a way to have 'access view' take inputs and open correct view without creating different...
-                # ...access views for each asset list
                 pass
             else:
                 TechnologyAssetsView(title='Technology Assets', bg_color=bg_color)
