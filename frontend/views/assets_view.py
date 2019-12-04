@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 from tkinter import *
-from tkinter import messagebox
 from backend import key_check
 from frontend.views.financial_assets_view import FinancialAssetsView
 from frontend.views.license_assets_view import LicenseAssetsView
@@ -15,6 +14,7 @@ class AssetsView:
         root = Tk()
         root.title(title)
         root.configure(bg=bg_color)
+        root.resizable(width=False, height=False)
 
         assets_buttons_frame = Frame(root, bg=bg_color)
         assets_buttons_frame.grid(row=0, column=0, pady=5, padx=5)
@@ -28,33 +28,30 @@ class AssetsView:
         online_account_assets_button.grid(row=0, column=3, pady=5, padx=5)
 
         def init_financial_assets():
-            if key_check.check_key_exists() is True:
-                access_view.FinancialAccessView(title='Financial Access', bg_color=bg_color, fg_color='yellow')
+            if key_check.key_check() is True:
+                access_view.FinancialAccessView(title='Financial Access', bg_color=bg_color, fg_color='blue',
+                                                lblframe_text='Financial Access')
             else:
                 FinancialAssetsView(title='Financial Assets', bg_color=bg_color)
 
         def init_technology_assets():
-            if key_check.check_key_exists() is False:
-                # display 'access view' window
-                pass
+            if key_check.key_check() is True:
+                access_view.TechnologyAccessView(title='Technology Access', bg_color=bg_color, fg_color='blue',
+                                                 lblframe_text='Technology Access')
             else:
                 TechnologyAssetsView(title='Technology Assets', bg_color=bg_color)
 
         def init_license_assets():
-            if key_check.check_key_exists() is True:
-                # display 'access view' window
-                # Find a way to have 'access view' take inputs and open correct view without creating different...
-                # ...access views for each asset list
-                pass
+            if key_check.key_check() is True:
+                access_view.LicenseAccessView(title='License Access', bg_color=bg_color, fg_color='blue',
+                                              lblframe_text='License Access')
             else:
                 LicenseAssetsView(title='License Assets', bg_color=bg_color)
 
         def init_online_account_assets():
-            if key_check.check_key_exists() is True:
-                # display 'access view' window
-                # Find a way to have 'access view' take inputs and open correct view without creating different...
-                # ...access views for each asset list
-                pass
+            if key_check.key_check() is True:
+                access_view.OnlineAccountAccessView(title='Online Accounts Access', bg_color=bg_color,
+                                                    fg_color='blue', lblframe_text='Online Accounts Access')
             else:
                 OnlineAccountsAssetsView(title='Online Accounts Assets', bg_color=bg_color)
 
