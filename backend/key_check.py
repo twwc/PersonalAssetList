@@ -23,3 +23,8 @@ def check_key_exists():
 def verify_key(secret_key):
     if introduction_view.key_db.key_verification(secret_key):
         return True
+
+
+def key_check():
+    if len(introduction_view.key_db.check_key_status()) >= 1:
+        return True
