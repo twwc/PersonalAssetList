@@ -28,3 +28,5 @@ def verify_key(secret_key):
 def key_check():
     if len(introduction_view.key_db.check_key_status()) >= 1:
         return True
+
+# may have to create key checks for adding assets for each table in Assets DB
