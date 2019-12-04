@@ -37,6 +37,19 @@ class KeyStorage:
         for key in keys:
             return '{}'.format(''.join(key))
 
+
 # create second DB for Assets
 # create functions for adding different tables for different assets
 # create functions to implement CRUD for each table in Assets DB
+
+class AssetStorage:
+    def __init__(self, db_name, finance_name, technology_name, license_name, online_account_name):
+        self.db_name = db_name
+        self.finance_name = finance_name
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute(
+            "CREATE TABLE IF NOT EXISTS {} (bank_name TEXT, account_number INTEGER, routing_number INTEGER)".format(
+                self.finance_name))
+        connection.commit()
+        connection.close()
