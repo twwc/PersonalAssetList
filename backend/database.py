@@ -36,3 +36,7 @@ class KeyStorage:
         connection.close()
         for key in keys:
             return '{}'.format(''.join(key))
+
+# create second DB for Assets
+# create functions for adding different tables for different assets
+# create functions to implement CRUD for each table in Assets DB
