@@ -15,6 +15,7 @@ class IntroductionView:
         root = Tk()
         root.title(title)
         root.configure(bg=bg_color)
+        root.resizable(width=False, height=False)
 
         app_title_frame = Frame(root, bg=bg_color)
         app_title_frame.grid(row=0, column=0, pady=5, padx=5)

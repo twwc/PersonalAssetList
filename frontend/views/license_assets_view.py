@@ -9,5 +9,6 @@ class LicenseAssetsView:
         root = Tk()
         root.title(title)
         root.configure(bg=bg_color)
+        root.resizable(width=False, height=False)
 
         root.mainloop()

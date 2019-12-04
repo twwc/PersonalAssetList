@@ -11,6 +11,7 @@ class KeyCreationView:
         root = Tk()
         root.title(title)
         root.configure(bg=bg_color)
+        root.resizable(width=False, height=False)
 
         key_creation_frame = Frame(root, bg=bg_color)
         key_creation_frame.grid(row=0, column=0, pady=5, padx=5)
