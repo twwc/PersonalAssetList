@@ -19,6 +19,7 @@ class KeyCreationView:
         access_key_label.grid(row=0, column=0, pady=5, padx=5)
         access_key_entry = Entry(key_creation_frame, show='*', font='bold')
         access_key_entry.grid(row=0, column=1, pady=5, padx=5)
+        access_key_entry.focus_force()
 
         buttons_frame = Frame(root, bg=bg_color)
         buttons_frame.grid(row=1, column=0)
@@ -33,6 +34,7 @@ class KeyCreationView:
                 if key_check.check_key_exists() is True:
                     introduction_view.key_db.insert_key(hashed_key)
                     access_key_entry.delete(0, END)
+                    root.destroy()
                 else:
                     access_key_entry.delete(0, END)
 
