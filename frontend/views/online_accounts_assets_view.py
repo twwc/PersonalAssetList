@@ -11,4 +11,7 @@ class OnlineAccountsAssetsView:
         root.configure(bg=bg_color)
         root.resizable(width=False, height=False)
 
+        # add structure
+        # refer to 'financial_assets_view' for layout
+
         root.mainloop()
