@@ -43,13 +43,23 @@ class KeyStorage:
 # create functions to implement CRUD for each table in Assets DB
 
 class AssetStorage:
-    def __init__(self, db_name, finance_name, technology_name, license_name, online_account_name):
+    def __init__(self, db_name, finance_table_name, technology_table_name, license_table_name,
+                 online_account_table_name):
         self.db_name = db_name
-        self.finance_name = finance_name
+        self.finance_table_name = finance_table_name
+        self.technology_table_name = technology_table_name
+        self.license_table_name = license_table_name
+        self.online_account_table_name = online_account_table_name
         connection = sqlite3.connect(self.db_name)
         curs = connection.cursor()
         curs.execute(
-            "CREATE TABLE IF NOT EXISTS {} (bank_name TEXT, account_number INTEGER, routing_number INTEGER)".format(
-                self.finance_name))
+            "CREATE TABLE IF NOT EXISTS {} (bank_name TEXT, a_number INTEGER, r_number INTEGER)".format(
+                self.finance_table_name))
+        curs.execute('CREATE TABLE IF NOT EXISTS {} (device_type TEXT, model TEXT, mac TEXT, location TEXT)'.format(
+            self.technology_table_name))
+        curs.execute(
+            'CREATE TABLE IF NOT EXISTS {} (license_account TEXT, license_exp TEXT, quantity INTEGER)'.format(
+                self.license_table_name))
+        curs.execute('CREATE TABLE IF NOT EXISTS {} ()'.format(self.online_account_table_name))
         connection.commit()
         connection.close()
