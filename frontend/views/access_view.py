@@ -28,6 +28,7 @@ class AccessView:
         access_key_label.grid(row=0, column=0, pady=5, padx=5)
         access_key_entry = Entry(access_key_frame, show='*', font='bold')
         access_key_entry.grid(row=0, column=1, pady=5, padx=5)
+        access_key_entry.focus_force()
 
         button_frame = Frame(root, bg=bg_color)
         button_frame.grid(row=1, column=0, pady=5, padx=5)
@@ -60,6 +61,7 @@ class FinancialAccessView:
         access_key_label.grid(row=0, column=0, pady=5, padx=5)
         access_key_entry = Entry(access_key_lblframe, show='*', font='bold')
         access_key_entry.grid(row=0, column=1, pady=5, padx=5)
+        access_key_entry.focus_force()
 
         button_frame = Frame(root, bg=bg_color)
         button_frame.grid(row=1, column=0, pady=5, padx=5)
@@ -70,7 +72,8 @@ class FinancialAccessView:
             hashed_key = hasher.hash_key(access_key_entry.get())
             if key_check.verify_key(hashed_key) is True:
                 root.destroy()
-                financial_assets_view.FinancialAssetsView(title='Financial Assets', bg_color=bg_color)
+                financial_assets_view.FinancialAssetsView(title='Financial Assets', bg_color=bg_color,
+                                                          lbl_text='Financial Asset Submission', lbl_text_color='blue')
             else:
                 access_key_entry.delete(0, END)
                 wrong_key_error()
@@ -93,6 +96,7 @@ class TechnologyAccessView:
         access_key_label.grid(row=0, column=0, pady=5, padx=5)
         access_key_entry = Entry(access_key_lblframe, show='*', font='bold')
         access_key_entry.grid(row=0, column=1, pady=5, padx=5)
+        access_key_entry.focus_force()
 
         submit_button_frame = Frame(root, bg=bg_color)
         submit_button_frame.grid(row=1, column=0, pady=5, padx=5)
@@ -126,6 +130,7 @@ class LicenseAccessView:
         access_key_label.grid(row=0, column=0, pady=5, padx=5)
         access_key_entry = Entry(access_key_lblframe, show='*', font='bold')
         access_key_entry.grid(row=0, column=1, pady=5, padx=5)
+        access_key_entry.focus_force()
 
         button_frame = Frame(root, bg=bg_color)
         button_frame.grid(row=1, column=0, pady=5, padx=5)
@@ -159,6 +164,7 @@ class OnlineAccountAccessView:
         access_key_label.grid(row=0, column=0, pady=5, padx=5)
         access_key_entry = Entry(access_key_lblframe, show='*', font='bold')
         access_key_entry.grid(row=0, column=1, pady=5, padx=5)
+        access_key_entry.focus_force()
 
         submit_button_frame = Frame(root, bg=bg_color)
         submit_button_frame.grid(row=1, column=0, pady=5, padx=5)
