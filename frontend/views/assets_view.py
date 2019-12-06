@@ -32,28 +32,33 @@ class AssetsView:
                 access_view.FinancialAccessView(title='Financial Access', bg_color=bg_color, fg_color='blue',
                                                 lblframe_text='Financial Access')
             else:
-                FinancialAssetsView(title='Financial Assets', bg_color=bg_color)
+                FinancialAssetsView(title='Financial Assets', bg_color=bg_color, lbl_text='Financial Assets Submission',
+                                    lbl_text_color='blue')
 
         def init_technology_assets():
             if key_check.key_check() is True:
                 access_view.TechnologyAccessView(title='Technology Access', bg_color=bg_color, fg_color='blue',
                                                  lblframe_text='Technology Access')
             else:
-                TechnologyAssetsView(title='Technology Assets', bg_color=bg_color)
+                TechnologyAssetsView(title='Technology Assets', bg_color=bg_color,
+                                     lbl_text='Technology Assets Submission',
+                                     lbl_text_color='blue')
 
         def init_license_assets():
             if key_check.key_check() is True:
                 access_view.LicenseAccessView(title='License Access', bg_color=bg_color, fg_color='blue',
                                               lblframe_text='License Access')
             else:
-                LicenseAssetsView(title='License Assets', bg_color=bg_color)
+                LicenseAssetsView(title='License Assets', bg_color=bg_color, lbl_text='License Assets Submission',
+                                  lbl_text_color='blue')
 
         def init_online_account_assets():
             if key_check.key_check() is True:
                 access_view.OnlineAccountAccessView(title='Online Accounts Access', bg_color=bg_color,
                                                     fg_color='blue', lblframe_text='Online Accounts Access')
             else:
-                OnlineAccountsAssetsView(title='Online Accounts Assets', bg_color=bg_color)
+                OnlineAccountsAssetsView(title='Online Accounts Assets', bg_color=bg_color,
+                                         lbl_text='Online Account Assets Submission', lbl_text_color='blue')
 
         financial_assets_button.configure(command=init_financial_assets)
         technology_assets_button.configure(command=init_technology_assets)
