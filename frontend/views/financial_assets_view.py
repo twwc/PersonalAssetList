@@ -14,7 +14,7 @@ class FinancialAssetsView:
         financial_assets_entry_lblframe = LabelFrame(root, bg=bg_color, text=lbl_text, fg=lbl_text_color)
         financial_assets_entry_lblframe.grid(row=0, column=0, pady=5, padx=5)
         bank_name_label = Label(financial_assets_entry_lblframe, text='Bank:', bg=bg_color, font='ELITE 10 bold')
-        bank_name_label.grid(row=0, columm=0, pady=5, padx=5)
+        bank_name_label.grid(row=0, column=0, pady=5, padx=5)
         bank_name_entry = Entry(financial_assets_entry_lblframe, font='bold')
         bank_name_entry.grid(row=0, column=1, pady=5, padx=5)
         credit_name_label = Label(financial_assets_entry_lblframe, bg=bg_color, text='Credit Company:',
