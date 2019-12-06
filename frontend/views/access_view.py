@@ -107,7 +107,9 @@ class TechnologyAccessView:
             hashed_key = hasher.hash_key(access_key_entry.get())
             if key_check.verify_key(hashed_key) is True:
                 root.destroy()
-                technology_assets_view.TechnologyAssetsView(title='Technology Assets', bg_color=bg_color)
+                technology_assets_view.TechnologyAssetsView(title='Technology Assets', bg_color=bg_color,
+                                                            lbl_text='Technology Assets Submission',
+                                                            lbl_text_color='blue')
             else:
                 access_key_entry.delete(0, END)
                 wrong_key_error()
@@ -141,7 +143,8 @@ class LicenseAccessView:
             hashed_key = hasher.hash_key(access_key_entry.get())
             if key_check.verify_key(hashed_key) is True:
                 root.destroy()
-                license_assets_view.LicenseAssetsView(title='License Assets', bg_color=bg_color)
+                license_assets_view.LicenseAssetsView(title='License Assets', bg_color=bg_color,
+                                                      lbl_text='License Assets Submission', lbl_text_color='blue')
             else:
                 access_key_entry.delete(0, END)
                 wrong_key_error()
@@ -175,7 +178,9 @@ class OnlineAccountAccessView:
             hashed_key = hasher.hash_key(access_key_entry.get())
             if key_check.verify_key(hashed_key) is True:
                 root.destroy()
-                online_accounts_assets_view.OnlineAccountsAssetsView(title='Online Accounts', bg_color=bg_color)
+                online_accounts_assets_view.OnlineAccountsAssetsView(title='Online Accounts', bg_color=bg_color,
+                                                                     lbl_text='Online Accounts Assets Submission',
+                                                                     lbl_text_color='blue')
             else:
                 access_key_entry.delete(0, END)
                 wrong_key_error()
