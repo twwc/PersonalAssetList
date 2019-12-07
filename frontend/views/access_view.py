@@ -12,7 +12,7 @@ from frontend.views import online_accounts_assets_view
 
 
 def wrong_key_error():
-    messagebox.showerror('Submission Error', 'Incorrect key. Try again')
+    messagebox.showerror('Submission Error', 'Incorrect key!')
 
 
 class AccessView:
@@ -41,7 +41,7 @@ class AccessView:
                 root.destroy()
                 AssetsView(title='Assets', bg_color=bg_color)
             else:
-                messagebox.showerror('Access Error', 'Incorrect Key!')
+                wrong_key_error()
 
         access_button.configure(command=init_access)
 
