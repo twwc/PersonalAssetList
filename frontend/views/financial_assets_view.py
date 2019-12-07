@@ -30,4 +30,6 @@ class FinancialAssetsView:
         cancel_button = Button(entry_buttons_frame, text='CANCEL', relief='raised', font='ELITE 10 bold', width=10)
         cancel_button.grid(row=0, column=1, pady=5, padx=5)
 
+        # create the table view for assets
+
         root.mainloop()
