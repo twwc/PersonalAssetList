@@ -32,4 +32,9 @@ class FinancialAssetsView:
 
         # create the table view for assets
 
+        financial_assets_view_frame = Frame(root, bg=bg_color)
+        financial_assets_view_frame.grid(row=2, column=0, pady=5, padx=5)
+        financial_view_box = Text(financial_assets_view_frame, font='ELITE 10 bold')
+        financial_view_box.grid(row=0, column=0, pady=5, padx=5)
+
         root.mainloop()
