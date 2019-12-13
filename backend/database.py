@@ -63,3 +63,11 @@ class AssetStorage:
         curs.execute('CREATE TABLE IF NOT EXISTS {} ()'.format(self.online_account_table_name))
         connection.commit()
         connection.close()
+
+    def insert_financial_assets(self, bank_name, account_number, routing_number):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('INSERT INTO {} VALUES (?,?,?)'.format(self.finance_table_name),
+                     (bank_name, account_number, routing_number))
+        connection.commit()
+        connection.close()
