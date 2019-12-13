@@ -11,12 +11,13 @@ class LicenseAssetsView:
         root.configure(bg=bg_color)
         root.resizable(width=False, height=False)
 
-        # add structure
-        # refer to 'financial_assets_view' for layout
-
         license_assets_lblframe = LabelFrame(root, text=lbl_text, bg=bg_color, fg=lbl_text_color, font='ELITE 10 bold')
         license_assets_lblframe.grid(row=0, column=0, pady=5, padx=5)
+        license_account_label = Label(license_assets_lblframe, bg=bg_color, text='License Type', font='ELITE 10 bold')
+        license_account_label.grid(row=0, column=0, pady=5, padx=5)
+        license_account_entry = Entry(license_assets_lblframe, font='bold')
+        license_account_entry.grid(row=0, column=1, pady=5, padx=5)
+        license_exp_label = Label(license_assets_lblframe, bg=bg_color)
 
-        # create labels and entries for asset parameters (ex. License type, License with, expiration, subscription, etc)
 
         root.mainloop()
