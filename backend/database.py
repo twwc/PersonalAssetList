@@ -63,3 +63,36 @@ class AssetStorage:
         curs.execute('CREATE TABLE IF NOT EXISTS {} ()'.format(self.online_account_table_name))
         connection.commit()
         connection.close()
+
+    def insert_finance_data(self, bank_name, a_number, r_number):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute("INSERT INTO {} VALUES (?,?,?)".format(self.finance_table_name), (bank_name, a_number, r_number))
+        connection.commit()
+        connection.close()
+
+    def insert_technology_data(self, device_type, model, mac, location):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute("INSERT INTO {} VALUES (?,?,?,?)".format(self.technology_table_name),
+                     (device_type, model, mac, location))
+        connection.commit()
+        connection.close()
+
+    def insert_license_data(self, license_account, license_exp, quantity):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute("INSERT INTO {} VALUES ()".format(self.license_table_name),
+                     (license_account, license_exp, quantity))
+        connection.commit()
+        connection.close()
+
+    def insert_online_account_data(self, ):
+        # create value types for online account assets
+        # implement those values in SQL execution function
+
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute("INSERT INTO {} VALUES ()".format(self.online_account_table_name), ())
+        connection.commit()
+        connection.close()
