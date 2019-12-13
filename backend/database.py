@@ -71,3 +71,65 @@ class AssetStorage:
                      (bank_name, account_number, routing_number))
         connection.commit()
         connection.close()
+
+    def view_financial_table(self):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('SELECT * FROM {}'.format(self.finance_table_name))
+        rows = curs.fetchall()
+        connection.close()
+        for item in rows:
+            return '{}'.format(''.join(item))
+
+    def insert_technology_assets(self, device_type, model, mac, location):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('INSERT INTO {} VALUES (?,?,?,?)'.format(self.technology_table_name),
+                     (device_type, model, mac, location))
+        connection.commit()
+        connection.close()
+
+    def view_technology_table(self):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('SELECT * FROM {}'.format(self.technology_table_name))
+        rows = curs.fetchall()
+        connection.close()
+        for item in rows:
+            return '{}'.format(''.join(item))
+
+    def insert_license_assets(self, license_account, license_exp, quantity):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('INSERT INTO {} VALUES ()'.format(self.license_table_name),
+                     (license_account, license_exp, quantity))
+        connection.commit()
+        connection.close()
+
+    def view_license_table(self):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('SELECT * FROM {}'.format(self.license_table_name))
+        rows = curs.fetchall()
+        connection.close()
+        for item in rows:
+            return '{}'.format(''.join(item))
+
+    def insert_online_accounts(self):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('INSERT INTO {} VALUES ()'.format(self.online_account_table_name), ())
+        connection.commit()
+        connection.close()
+
+    def view_online_accounts_table(self):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('SELECT * FROM {}'.format(self.online_account_table_name))
+        rows = curs.fetchall()
+        connection.close()
+        for item in rows:
+            return '{}'.format(''.join(item))
+
+    # create other functions for asset backend
+    # CRUD compliant
