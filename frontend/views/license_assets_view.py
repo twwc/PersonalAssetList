@@ -18,6 +18,8 @@ class LicenseAssetsView:
         license_account_entry = Entry(license_assets_lblframe, font='bold')
         license_account_entry.grid(row=0, column=1, pady=5, padx=5)
         license_exp_label = Label(license_assets_lblframe, bg=bg_color)
-
+        license_exp_label.grid(row=1, column=0, pady=5, padx=5)
+        license_exp_entry = Entry(license_assets_lblframe)
+        license_exp_entry.grid(row=1, column=1, pady=5, padx=5)
 
         root.mainloop()
