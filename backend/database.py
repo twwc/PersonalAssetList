@@ -64,6 +64,7 @@ class AssetStorage:
         connection.commit()
         connection.close()
 
+<<<<<<< HEAD
     def insert_finance_data(self, bank_name, a_number, r_number):
         connection = sqlite3.connect(self.db_name)
         curs = connection.cursor()
@@ -75,18 +76,58 @@ class AssetStorage:
         connection = sqlite3.connect(self.db_name)
         curs = connection.cursor()
         curs.execute("INSERT INTO {} VALUES (?,?,?,?)".format(self.technology_table_name),
+=======
+    def insert_financial_assets(self, bank_name, account_number, routing_number):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('INSERT INTO {} VALUES (?,?,?)'.format(self.finance_table_name),
+                     (bank_name, account_number, routing_number))
+        connection.commit()
+        connection.close()
+
+    def view_financial_table(self):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('SELECT * FROM {}'.format(self.finance_table_name))
+        rows = curs.fetchall()
+        connection.close()
+        for item in rows:
+            return '{}'.format(''.join(item))
+
+    def insert_technology_assets(self, device_type, model, mac, location):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('INSERT INTO {} VALUES (?,?,?,?)'.format(self.technology_table_name),
+>>>>>>> fce8d5060e1304529efbf1d75b72a59427877dfa
                      (device_type, model, mac, location))
         connection.commit()
         connection.close()
 
+<<<<<<< HEAD
     def insert_license_data(self, license_account, license_exp, quantity):
         connection = sqlite3.connect(self.db_name)
         curs = connection.cursor()
         curs.execute("INSERT INTO {} VALUES ()".format(self.license_table_name),
+=======
+    def view_technology_table(self):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('SELECT * FROM {}'.format(self.technology_table_name))
+        rows = curs.fetchall()
+        connection.close()
+        for item in rows:
+            return '{}'.format(''.join(item))
+
+    def insert_license_assets(self, license_account, license_exp, quantity):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('INSERT INTO {} VALUES ()'.format(self.license_table_name),
+>>>>>>> fce8d5060e1304529efbf1d75b72a59427877dfa
                      (license_account, license_exp, quantity))
         connection.commit()
         connection.close()
 
+<<<<<<< HEAD
     def insert_online_account_data(self, ):
         # create value types for online account assets
         # implement those values in SQL execution function
@@ -96,3 +137,32 @@ class AssetStorage:
         curs.execute("INSERT INTO {} VALUES ()".format(self.online_account_table_name), ())
         connection.commit()
         connection.close()
+=======
+    def view_license_table(self):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('SELECT * FROM {}'.format(self.license_table_name))
+        rows = curs.fetchall()
+        connection.close()
+        for item in rows:
+            return '{}'.format(''.join(item))
+
+    def insert_online_accounts(self):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('INSERT INTO {} VALUES ()'.format(self.online_account_table_name), ())
+        connection.commit()
+        connection.close()
+
+    def view_online_accounts_table(self):
+        connection = sqlite3.connect(self.db_name)
+        curs = connection.cursor()
+        curs.execute('SELECT * FROM {}'.format(self.online_account_table_name))
+        rows = curs.fetchall()
+        connection.close()
+        for item in rows:
+            return '{}'.format(''.join(item))
+
+    # create other functions for asset backend
+    # CRUD compliant
+>>>>>>> fce8d5060e1304529efbf1d75b72a59427877dfa
